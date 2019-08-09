@@ -340,6 +340,18 @@
 				<Member 
 					fullName="Windows.UI.Xaml.Style Uno.UI.GlobalStaticResources.get___ImplicitStyle_Windows_UI_Xaml_Controls_AppBarSeparator()"
 					reason="Implicit style moved to GenericStyles.cs" />
+				<Member 
+					fullName="System.Void Windows.UI.Xaml.Media.Imaging.BitmapSource.set_PixelHeight(System.Int32 value)"
+					reason="Removed API not available in WinUI" />
+				<Member 
+					fullName="System.Void Windows.UI.Xaml.Media.Imaging.BitmapSource.set_PixelWidth(System.Int32 value)"
+					reason="Removed API not available in WinUI" />
+				<Member 
+					fullName="System.Void Windows.UI.Core.CoreWindow..ctor()"
+					reason="Invalid visibility."/>
+				<Member 
+					fullName="System.Void Windows.UI.Xaml.Media.RenderingEventArgs..ctor()"
+					reason="Constructor is internal on UWP" />
 			</Methods>
 			
 			<Fields>
