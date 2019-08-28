@@ -404,6 +404,12 @@
 				<Member
 					fullName="System.Void Windows.UI.Xaml.Media.RenderingEventArgs..ctor()"
 					reason="Constructor is internal on UWP" />
+				<Member 
+					fullName="System.Void Windows.UI.Xaml.Controls.Primitives.SelectorItem.UpdateCommonStates()"
+					reason="Not part of the UWP API."/>
+				<Member
+					fullName="System.Void Windows.UI.Xaml.Media.RenderingEventArgs..ctor()"
+					reason="Constructor is internal on UWP" />
 			</Methods>
 			
 			<Fields>
