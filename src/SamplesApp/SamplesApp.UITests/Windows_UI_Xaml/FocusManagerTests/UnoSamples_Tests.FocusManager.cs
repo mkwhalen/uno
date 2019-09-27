@@ -457,7 +457,7 @@ namespace SamplesApp.UITests.Windows_UI_Xaml_Controls.FocusManagerTests
 			_app.WaitForElement(_app.Marked("TxtCurrentFocused"));
 
 			var txtCurrentFocused = _app.Marked("TxtCurrentFocused");
-			var frameworkElement = _app.Marked("MyComboBox");
+			var combo = _app.Marked("MyComboBox");
 
 			_app.Tap(txtCurrentFocused);
 
@@ -465,12 +465,15 @@ namespace SamplesApp.UITests.Windows_UI_Xaml_Controls.FocusManagerTests
 			_app.WaitForDependencyPropertyValue(txtCurrentFocused, "Text", "");
 			_app.Screenshot("FocusManager - GetFocusedElement - ComboBox - 1 - Initial State");
 
-			frameworkElement.Tap();
+			combo.Tap();
 			_app.Wait(2);
 
 			// Assert After Selection 
 			_app.WaitForDependencyPropertyValue(txtCurrentFocused, "Text", "MyComboBox");
 			_app.Screenshot("FocusManager - GetFocusedElement - ComboBox - 2 - After Selection");
+
+			// Close the combo to not pollute other tests
+			_app.TapCoordinates(20, 100);
 		}
 
 		[Test]
@@ -482,7 +485,7 @@ namespace SamplesApp.UITests.Windows_UI_Xaml_Controls.FocusManagerTests
 			_app.WaitForElement(_app.Marked("TxtCurrentFocused"));
 
 			var txtCurrentFocused = _app.Marked("TxtCurrentFocused");
-			var frameworkElement = _app.Marked("MyComboBox");
+			var combo = _app.Marked("MyComboBox");
 
 			_app.Tap(txtCurrentFocused);
 
@@ -490,10 +493,13 @@ namespace SamplesApp.UITests.Windows_UI_Xaml_Controls.FocusManagerTests
 			_app.WaitForDependencyPropertyValue(txtCurrentFocused, "Text", "");
 			_app.Screenshot("FocusManager - LostFocus - ComboBox - 1 - Initial State");
 
-			frameworkElement.Tap();
+			combo.Tap();
 			_app.Wait(1);
 
-			_app.TapCoordinates(20, 100);
+			_app.TapCoordinates(20, 100); // Close the  combo
+			_app.WaitForDependencyPropertyValue(txtCurrentFocused, "Text", "MyComboBox");
+
+			_app.TapCoordinates(20, 100); // Un focus
 
 			// Assert Click outside
 			_app.WaitForDependencyPropertyValue(txtCurrentFocused, "Text", "");
@@ -538,7 +544,7 @@ namespace SamplesApp.UITests.Windows_UI_Xaml_Controls.FocusManagerTests
 
 			var txtCurrentFocused = _app.Marked("TxtCurrentFocused");
 			var comboBox = _app.Marked("MyComboBox");
-			var frameworkElement = _app.Marked("MyComboBoxItem_1");
+			var item1 = _app.Marked("MyComboBoxItem_1");
 
 			_app.Tap(txtCurrentFocused);
 
@@ -549,7 +555,7 @@ namespace SamplesApp.UITests.Windows_UI_Xaml_Controls.FocusManagerTests
 			comboBox.Tap();
 			_app.Wait(1);
 
-			frameworkElement.Tap();
+			item1.Tap();
 			_app.Wait(1);
 
 			_app.TapCoordinates(20, 100);
