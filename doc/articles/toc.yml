@@ -42,6 +42,8 @@
       href: uno-community-toolkit.md
     - name: Uno app solution structure
       href: uno-app-solution-structure.md
+    - name: Splash Screens
+      href: splash-screen.md
     - name: Performance tips
       href: Uno-UI-Performance.md
     - name: 'Debugging C# on WASM'
